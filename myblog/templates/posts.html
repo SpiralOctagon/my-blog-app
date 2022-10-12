@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style>
+        
+        
+        #nbs-post{
+            margin-top: 12.5px;
+            margin-left: 37.5px;
+            border: 1.5px solid #212529;
+            border-radius: 8px;
+            padding-top: 12.5px;
+            padding-bottom: 12.5px;
+            padding-left: 12.5px;
+            width: fit-content;
+            padding-right: 12.5px;
+            background-color: rgb(250, 250, 250);
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div id="nbs-header">
+        <h1 class="display-5">Posts</h1>
+        <hr id="nbs-hr">
+    </div>
+    {% for post in posts %}
+    <div class="content vstack gap-6">
+        <div id="nbs-post" class="bg-dark border">
+            <h1 style="color: #C2C3C4;">{{ post.Title }}</h1>
+            <br>
+            <h6 style="color: #C2C3C4;">{{ post.Description }}</h6>
+        </div>  
+        <br>
+    </div>        
+    {% endfor %}
+
+
+
+{% endblock %}

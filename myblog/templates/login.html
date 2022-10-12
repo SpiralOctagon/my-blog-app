@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style>
+    #nbs-loginDiv{
+        margin-top: 24px;
+        padding-left: 50px;
+    }
+    
+</style>
+    
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div id="nbs-header">
+            <h1 class="display-5">Login</h1>
+            <hr id="nbs-hr">
+        </div>
+        <div id="nbs-loginDiv">
+        <form action="" method="post">
+
+
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login" class="btn btn-dark">
+        </form>
+    </div>
+    </div>
+    
+
+{% endblock %}

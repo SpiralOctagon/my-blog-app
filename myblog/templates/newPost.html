@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style>
+        #nbs-new-post{
+            margin-top: 24px;
+            padding-left: 50px;
+        }
+    </style>
+    
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div id="nbs-header">
+        <h1 class="display-5">New Post</h1>
+        <hr id="nbs-hr">
+    </div><br><br>
+    {% if  submitted %}
+        <div id="nbs-new-post">
+            <h3>Your Post was added <span style="color: green; font-weight: bolder;">✓</span></h3>
+        </div>        
+        {% else %}
+        <div id="nbs-new-post">
+            <form action="" method="post">
+                {% csrf_token %}
+    
+                {{ form.as_p }}
+    
+                <input type="submit" value="Submit" class="btn btn-dark">
+            </form>
+        </div>
+    {% endif %}
+    </div>
+    
+    
+
+
+{% endblock %}
